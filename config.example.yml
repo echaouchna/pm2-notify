@@ -23,4 +23,6 @@ multiple_subject: 'Error on <%= hostname %>'
 #wait for 5 seconds after each event before sending an email - avoid spam when a lot of events happened
 polling: 2500 
 #attach your process logs to the email
-attach_logs: true 
+attach_logs: true
+#Cooldown time in minutes before sending the next event for a process
+notification_cooldown_time: 5
