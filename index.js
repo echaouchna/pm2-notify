@@ -39,7 +39,7 @@ function sendMail(opts) {
         throw new ReferenceError("No text or subject to be mailed");
     }
 
-    var opts = {
+    var options = {
         from: opts.from || config.mail.from,
         to: opts.to ? opts.to : config.mail.to,
         subject: opts.subject,
@@ -47,7 +47,7 @@ function sendMail(opts) {
         attachments: opts.attachments || []
     };
 
-    transporter.sendMail(opts, function(err, info) {
+    transporter.sendMail(options, function(err, info) {
         if (err) {
             console.error(err);
         }
@@ -64,7 +64,7 @@ function sendMail(opts) {
 function processQueue() {
     var l = queue.length;
 
-    if (l == 0) {
+    if (l === 0) {
         return;
     }
 
